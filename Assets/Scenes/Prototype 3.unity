@@ -167,7 +167,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 638675beaa24ac64e8981294f0e92382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefab: {fileID: 3842715006712626264, guid: c895cc03aac4f6a4bafc3a8e6eb5a4ce, type: 3}
+  obstaclePrefabs:
+  - {fileID: 233628319593466685, guid: 2175b717ab5ed6a419ff27ea74e0804c, type: 3}
+  - {fileID: 2611553826738032169, guid: 0c22a196ee6d2384ba5eaa3a2f1a4e20, type: 3}
+  - {fileID: 1567089642433972325, guid: 07f81c8a031339c4d84ead33d0d7370a, type: 3}
+  - {fileID: 7224824313384892557, guid: 0871dc50ddeedb849b7f1885e08923cf, type: 3}
+  - {fileID: 6394462187254068651, guid: 24ac15d9b3ac7254aae843224c3552cc, type: 3}
+  - {fileID: 4502383078356148114, guid: 1a0bc786a718f36459fb95ca9f3deb58, type: 3}
+  - {fileID: 3139448041365606593, guid: 034f5738327114246adf614d14f979c0, type: 3}
+  - {fileID: 5362237739262002090, guid: 34fe3119b6408304b8216678f544248b, type: 3}
+  - {fileID: 9215956753039831712, guid: d7f3062385099f54eb7296d6a3ee599e, type: 3}
+--- !u!1 &63449208
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 63449210}
+  - component: {fileID: 63449209}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &63449209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63449208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76abd69d8244aea4ca66f4e7a47d0025, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingPoint: {fileID: 684579333}
+  lerpSpeed: 5
+  score: 0
+--- !u!4 &63449210
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63449208}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,6 +507,37 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &684579332
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 684579333}
+  m_Layer: 0
+  m_Name: StartPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &684579333
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684579332}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &749347039
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -465,7 +552,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b186f9485a0828b468f98fe846ae1a68, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b186f9485a0828b468f98fe846ae1a68, type: 3}
       propertyPath: m_LocalPosition.y
@@ -547,10 +634,12 @@ MonoBehaviour:
   dirtParticle: {fileID: 1185405154}
   jumpSound: {fileID: 8300000, guid: 0f7d0b7c3397f4dac91f20e8a77d2d57, type: 3}
   crashSound: {fileID: 8300000, guid: 913d6445ee8cc4152a9c18da590ee203, type: 3}
-  jumpForce: 600
+  maxJumpCount: 2
+  jumpForce: 700
   gravityModifier: 1.5
   isOnGround: 1
   gameOver: 0
+  doubleSpeed: 0
 --- !u!65 &749347042
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1098,3 +1187,5 @@ SceneRoots:
   - {fileID: 835818921}
   - {fileID: 749347039}
   - {fileID: 47246694}
+  - {fileID: 63449210}
+  - {fileID: 684579333}
