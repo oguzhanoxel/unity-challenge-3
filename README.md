@@ -4,3 +4,5 @@
 
 [Bonus Features 3](https://learn.unity.com/tutorial/bonus-features-3-share-your-work)
 
+[Play](https://play.unity.com/mg/other/testprototype3)
+
